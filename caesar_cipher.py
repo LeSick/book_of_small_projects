@@ -1,9 +1,11 @@
+from typing import Final
+
 try:
     import pyperclip
 except ImportError:
     pass
 
-SYMBOLS: str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+SYMBOLS: Final = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 print(
     '''The Ceaser cipher encrypts letters by shifting them over by a
