@@ -32,7 +32,7 @@ while True:
     if not response.isdecimal():
         continue
 
-    if 0 <= int(response) < len(max_key):
+    if 0 <= int(response) < max_key:
         key = int(response)
         break
 # Let user enter the message to encrypt/decrypt
@@ -53,10 +53,11 @@ for symbol in message:
             num += key
         else:
             num -= key
-
+# Handle the wrap-around if num is larger than the length of
+# SYMBOLS or less than 0
         if num >= len(SYMBOLS):
             num -= len(SYMBOLS)
-        else:
+        elif num < 0:
             num += len(SYMBOLS)
 
         translated += SYMBOLS[num]
